@@ -14,6 +14,13 @@ app.get('/', function(req, res) {
 app.get('/request/new', function(req, res) {
     res.render('pgNewRequest');
 });
+
+app.post('/apost', function(req,res) {
+    console.log(req.body);
+    console.log(req.params);
+    console.log(req.query);
+    res.send('Ok!');
+});
  
  
 app.listen(process.env.PORT);
