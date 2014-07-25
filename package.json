@@ -1,0 +1,12 @@
+{
+  "name": "Crm",
+  "version": "0.0.1",
+  "description": "Crm with bootstrap handlbars and expressjs backend",
+  "main": "app.js",
+  "repository": "",
+  "author": "Sainis Panagiotis <sainis29@hotmail.com>",
+  "dependencies": {
+    "express": "3.*",
+    "hbs":"*"
+  }
+}
