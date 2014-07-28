@@ -6,7 +6,9 @@ app.set('view engine', 'html');
 app.engine('html', hbs.__express);
  
 app.use(express.static('public'));
-app.use(express.bodyParser());
+//app.use(express.bodyParser());
+app.use(express.urlencoded());
+app.use(express.json());
 
 app.get('/', function(req, res) {
     res.render('maintest');
@@ -20,8 +22,7 @@ app.post('/apost', function(req,res) {
     console.log(req.body);
     console.log(req.params);
     console.log(req.query);
-    console.log(req.form);
-    res.send('Ok!');
+    res.send('Ok! ' + req.body.Firstname + ' ' + req.body.Lastname+', i got It!');
 });
 
 app.listen(process.env.PORT);
