@@ -6,32 +6,29 @@
       <button type="submit" class="btn btn-warning">Send</button>
     </form>
   </div>
-  <div class="row">
-    <div id="controls" onload="initialize();">
-      <select id="country" style="display:none;">
-        <option value="gr">Greece</option>
-      </select>
-    </div>
-    <div style="height:90%;">
-      <div id="locationField" style="width: 300px;">
-        <input id="autocomplete" placeholder="Enter a city" type="search" />
-      </div>
-      <div id="googleMap"></div>
-    </div>
+  <div id="controls" style="display:none;">
+    <select id="country">
+      <option value="gr">Greece</option>
+    </select>
   </div>
+  <div id="locationField" class="row">
+    <input id="autocomplete" placeholder="Enter a city" type="search" />
+  </div>
+  <div id="googleMap" style="width:100%;height:100%;"></div>
 </div>
-
+</div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxQdBHZq-we5xmTIzqZWfiXhts6IEOk5g&sensor=false&v=3.exp&libraries=places"></script>
 <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script> -->
 <script src="/js/myScripts.js"></script>
 <script>
   $(document).ready(function() {
-   // $.getScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCxQdBHZq-we5xmTIzqZWfiXhts6IEOk5g&sensor=false', function() {
-   //   $.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places', function() {
-     //   $.getScript('/js/myScripts.js', function() {
-          // callback function
-          initialize(document.getElementById('googleMap'));
-      //  });
+    // $.getScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCxQdBHZq-we5xmTIzqZWfiXhts6IEOk5g&sensor=false', function() {
+    //   $.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places', function() {
+    //   $.getScript('/js/myScripts.js', function() {
+    // callback function
+    initialize(document.getElementById('googleMap'));
+    $('#googleMap').css('height','500px');
+    //  });
     //  });
     //});
   });
