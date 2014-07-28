@@ -4,26 +4,28 @@
     <span>{{address}}</span>
   </div>
 </div>
-<div class="container marketing" >
+<div class="container">
+<form action="/saveRequest" method="post">
+<input type="text" name="address" style="display:none"/>
   <div class="col-md-4">
     <h4>Pick A Date</h4>
     <div class="btn-group bootstrap-select show-tick dropup">
       <div class="controls">
         <div class="input-group">
-          <input id="date-picker-2" type="text" class="date-picker form-control" />
+          <input id="date-picker-2" type="text" class="date-picker form-control" name="date"/>
           <label for="date-picker-2" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span> </label>
         </div>
       </div>
     </div>
     <h4>Categories</h4>
-    <select class="selectpicker" data-live-search="true">
+    <select class="selectpicker" data-live-search="true" name="category">
       <option>Choose...</option>
       <option>Category 1</option>
       <option>Category 2</option>
       <option>Category 3</option>
     </select>
     <h4>Subcategories</h4>
-    <select class="selectpicker" data-live-search="true">
+    <select class="selectpicker" data-live-search="true" name="subcategory">
       <option>Choose...</option>
       <option>Subcategory 1</option>
       <option>Subcategory 2</option>
@@ -40,12 +42,12 @@
   <div class="col-md-8">
   
     <h4>Request Title</h4>
-    <textarea type="" class="form-control" rows="1"></textarea>
+    <textarea type="" class="form-control" rows="1" name="title"></textarea>
     <h4>Your Request</h4>
-    <textarea type="" class="form-control" rows="15"></textarea>
+    <textarea type="" class="form-control" rows="15" name="maintext"></textarea>
     <button class="btn btn-lg btn-primary btn-block" style="margin-top:2%" type="submit">Submit</button>
   </div>
-  
+  </form>
 </div>
 
 <hr class="featurette-divider">
@@ -67,6 +69,9 @@ $(".date-picker").on("change", function () {
     var val = $("label[for='" + id + "']").text();
     $("#msg").text(val + " changed");
 });
+function insertData(){
+    
+}
 </script>
 <style>
 

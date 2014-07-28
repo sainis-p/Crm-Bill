@@ -20,9 +20,7 @@ function initialize(element) {
     zoomControl: false,
     streetViewControl: false
   };
-alert('adding map');
   map = new google.maps.Map(element, myOptions);
-  alert('map: ' + map);
   // Create the autocomplete object and associate it with the UI input control.
   // Restrict the search to the default country, and to place type "cities".
   autocomplete = new google.maps.places.Autocomplete(
