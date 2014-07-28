@@ -1,6 +1,6 @@
-# Node Chat Example
+# Node based crm test
 
-Chat example to showcase how to use `socket.io` with a static `express` server.
+A crm build on node and deployed on heroku with bootstrap ant handlebars
 
 ## Setup
 
