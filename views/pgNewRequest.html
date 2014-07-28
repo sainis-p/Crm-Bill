@@ -13,25 +13,26 @@
       </select>
     </div>
     <div style="height:90%;">
-      <div id="locationField" style="width: 300px;
-position: absolute;
-z-index: +5;
-left: 7%;">
+      <div id="locationField" style="width: 300px;">
         <input id="autocomplete" placeholder="Enter a city" type="search" />
       </div>
       <div id="googleMap"></div>
     </div>
   </div>
 </div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxQdBHZq-we5xmTIzqZWfiXhts6IEOk5g&sensor=false&v=3.exp&libraries=places"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script> -->
+<script src="/js/myScripts.js"></script>
 <script>
   $(document).ready(function() {
-    $.getScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCxQdBHZq-we5xmTIzqZWfiXhts6IEOk5g&sensor=false', function() {
-      $.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places', function() {
-        $.getScript('/js/myScripts.js', function() {
+   // $.getScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCxQdBHZq-we5xmTIzqZWfiXhts6IEOk5g&sensor=false', function() {
+   //   $.getScript('https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places', function() {
+     //   $.getScript('/js/myScripts.js', function() {
           // callback function
-          initialize();
-        });
-      });
-    });
+          initialize(document.getElementById('googleMap'));
+      //  });
+    //  });
+    //});
   });
 </script>
