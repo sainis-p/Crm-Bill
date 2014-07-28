@@ -8,6 +8,7 @@ var countries = {
     zoom: 10
   }
 };
+
 function initialize() {
   var myOptions = {
     zoom: countries['gr'].zoom,
