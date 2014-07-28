@@ -13,6 +13,13 @@ app.use(express.json());
 app.get('/', function(req, res) {
     res.render('maintest');
 });
+
+app.get('/paramget/:name', function(req, res) {
+    console.log(req.body);
+    console.log(req.params);
+    console.log(req.query);
+    res.send('Good job ' + req.params['name']);
+});
  
 app.get('/request/new', function(req, res) {
     res.render('pgNewRequest');
