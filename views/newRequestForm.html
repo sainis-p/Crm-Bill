@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="jumbotron">
+    <h2>My Request</h2>
+    <span>{{address}}</span>
+  </div>
+</div>
+<div class="container marketing" >
+  <div class="col-md-4">
+    <h4>Pick A Date</h4>
+    <div class="btn-group bootstrap-select show-tick dropup">
+      <div class="controls">
+        <div class="input-group">
+          <input id="date-picker-2" type="text" class="date-picker form-control" />
+          <label for="date-picker-2" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span> </label>
+        </div>
+      </div>
+    </div>
+    <h4>Categories</h4>
+    <select class="selectpicker" data-live-search="true">
+      <option>Choose...</option>
+      <option>Category 1</option>
+      <option>Category 2</option>
+      <option>Category 3</option>
+    </select>
+    <h4>Subcategories</h4>
+    <select class="selectpicker" data-live-search="true">
+      <option>Choose...</option>
+      <option>Subcategory 1</option>
+      <option>Subcategory 2</option>
+      <option>Subcategory 3</option>
+    </select>
+    <h4>Upload An Image</h4>
+    <div class="fileinput fileinput-new" data-provides="fileinput">
+      <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+      <div> <span class="btn btn-default btn-file"><span class="fileinput-new">Select</span><span class="fileinput-exists">Change</span>
+        <input type="file" name="...">
+        </span> <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a> </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+  
+    <h4>Request Title</h4>
+    <textarea type="" class="form-control" rows="1"></textarea>
+    <h4>Your Request</h4>
+    <textarea type="" class="form-control" rows="15"></textarea>
+    <button class="btn btn-lg btn-primary btn-block" style="margin-top:2%" type="submit">Submit</button>
+  </div>
+  
+</div>
+
+<hr class="featurette-divider">
+<link href="css/bootstrap-select.min.css" rel="stylesheet">
+<link href="css/jasny-bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+
+<script src="js/bootstrap-select.min.js"></script> 
+<script src="js/jasny-bootstrap.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> 
+
+<script>
+$('.selectpicker').selectpicker();
+
+$(".date-picker").datepicker();
+$(".date-picker").on("change", function () {
+    var id = $(this).attr("id");
+    
+    var val = $("label[for='" + id + "']").text();
+    $("#msg").text(val + " changed");
+});
+</script>
+<style>
+
+.date-form { margin: 10px; }
+label.control-label span { cursor: pointer; }
+
+</style>
+</body>
+</html>

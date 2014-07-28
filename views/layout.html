@@ -21,8 +21,6 @@
   <body>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual
-    files as needed -->
     <script src="/js/bootstrap.min.js"></script>
     <div class="navbar-wrapper" style="margin-top:1%;margin-bottom:2%;">
       <div class="container">
@@ -43,10 +41,13 @@
                   <a href="/">Home</a>
                 </li>
                 <li>
-                  <a href="/request/new">New Request</a>
+                  <a href="/MyRequests">My Requests</a>
                 </li>
                 <li>
-                  <a href="/paramget/kostas">New param</a>
+                  <a href="/NewRequest">New Request</a>
+                </li>
+                <li>
+                  <a href="/PreviewRequests">Preview Requests</a>
                 </li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
@@ -76,8 +77,10 @@
         </div>
       </div>
     </div>
+    <div class="container">
     {{{body}}}
     <!-- FOOTER -->
+    </div>
     <footer>
       <p class="pull-right">
         <a href="#">Back to top</a>
