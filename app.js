@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var hbs = require('hbs');
 var mysql = require('mysql');
+//var config = require("./config.js");
 
 app.set('view engine', 'html');
 app.engine('html', hbs.__express);
@@ -16,7 +17,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/MyRequests', function(req, res) {
-    res.render('myRequests');
+    res.render('myRequests'); 
 });
 
 app.get('/NewRequest', function(req, res) {
@@ -24,9 +25,7 @@ app.get('/NewRequest', function(req, res) {
 });
 
 app.get('/NewRequestForm', function(req, res) {
-    console.log(req.body);
-    console.log(req.params);
-    console.log(req.query);
+    //console.log(config.username);
     res.render('newRequestForm', {
         address: req.query.address
     });
@@ -36,21 +35,11 @@ app.get('/PreviewRequests', function(req, res) {
     res.render('previewRequests');
 });
 
-app.get('/paramget/:name', function(req, res) {
-    console.log(req.body);
-    console.log(req.params);
-    console.log(req.query);
-    res.send('Good job ' + req.params['name']);
-});
-
 app.get('/request/new', function(req, res) {
     res.render('pgNewRequest');
 });
 
 app.post('/saveRequest', function(req, res) {
-    console.log(req.body);
-    console.log(req.params);
-    console.log(req.query);
 
     var request = {
         username: 'Prokopis',
@@ -74,19 +63,17 @@ app.post('/saveRequest', function(req, res) {
     });
 
     connection.connect(function(err) {
-         if (err) throw err;
+        if (err) throw err;
     });
 
     var q = connection.query('insert into c9.requestTable set ?', request, function(err, result) {
         if (err) throw err;
-
         console.log(result);
     });
-
     connection.end();
-
 
     res.send('Ok! i got It!');
 });
+
 
 app.listen(process.env.PORT);
