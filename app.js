@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var hbs = require('hbs');
 var mysql = require('mysql');
-//var config = require("./config.js");
+var config = require("./config.js");
 
 app.set('view engine', 'html');
 app.engine('html', hbs.__express);
@@ -25,7 +25,7 @@ app.get('/NewRequest', function(req, res) {
 });
 
 app.get('/NewRequestForm', function(req, res) {
-    //console.log(config.username);
+    console.log(config);
     res.render('newRequestForm', {
         address: req.query.address
     });
